@@ -1,7 +1,4 @@
-import React from "react"
-import "./KandyKorner.css"
-
-export const KandyKorner = () => (
+export const Home = () => (
     <>
         <h2>Kandy Korner</h2>
         <small>Like giving candy to a baby!</small>
