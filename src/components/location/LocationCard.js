@@ -7,7 +7,6 @@ export const LocationCard = ({location}) => (
         <h3 className="location__name"><b>Location:</b> {location.id}</h3>
         <div className="location__address"><b>Address:</b> {location.address}</div>
         <div className="location__footage"><b>Square Feet:</b> {location.squareft}</div>
-        <div className="location__handicap"><b>Handicap Accessible:</b> {location.handicap}</div>
-        {console.log(location.handicap)}
+        <div className="location__handicap"><b>Handicap Accessible:</b> {location.handicap ? 'Yes' : 'No'}</div>
     </section>
 )
