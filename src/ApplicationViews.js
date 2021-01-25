@@ -6,6 +6,9 @@ import { LocationList } from "./components/location/LocationList"
 import { ProductProvider } from "./components/product/ProductProvider"
 import { ProductList } from "./components/product/ProductList"
 import { ProductTypeProvider } from "./components/product/ProductTypeProvider"
+import { EmployeeProvider } from "./components/employee/EmployeeProvider"
+import { EmployeeList} from "./components/employee/EmployeeList"
+import { EmployeeForm } from "./components/employee/EmployeeForm"
 
 export const ApplicationViews = () => {
     return (
@@ -20,12 +23,26 @@ export const ApplicationViews = () => {
                 <ProductProvider>
                     <Route path="/locations">
                         <LocationList />
+                        
                         <ProductTypeProvider>
                             <ProductList />
                         </ProductTypeProvider>
+
                     </Route>
                 </ProductProvider>
             </LocationProvider>
+
+            <EmployeeProvider>
+                <LocationProvider>
+                    <Route exact path="/employees">
+                        <EmployeeList />
+                    </Route>
+
+                    <Route exact path="/employees/create">
+                        <EmployeeForm />
+                    </Route>
+                </LocationProvider>
+            </EmployeeProvider>
         </>
     )
 }

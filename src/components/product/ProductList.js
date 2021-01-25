@@ -24,9 +24,9 @@ export const ProductList = () => {
 
       {
         products.map(product => {
-          // const matchingType = productTypes.find(p => p.id === product.id)
-          // console.log(matchingType)
-          return <ProductCard key={product.id} product={product} />
+          const matchingType = productTypes.find(p => p.id === product.productTypeId)
+          // console.log(matchingType.type)
+          return <ProductCard key={product.id} product={product} type={matchingType}/>
         })
       }
     </div>
