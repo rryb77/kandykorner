@@ -10,6 +10,7 @@ export const LocationList = () => {
     }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
+        
         <div className="locations">
             {
                 locations.map(location => {
