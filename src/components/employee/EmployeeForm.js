@@ -13,7 +13,7 @@ export const EmployeeForm = () => {
       locationId: 0,
       manager: false,
       fulltime: false,
-      hourlyrate: 0.00,
+      hourlyrate: 0,
     });
 
     const history = useHistory();
@@ -42,6 +42,20 @@ export const EmployeeForm = () => {
       event.preventDefault() //Prevents the browser from submitting the form
 
       const locationId = parseInt(employee.locationId)
+      const manager = employee.manager
+      const fulltime = employee.fulltime
+
+      if (manager === "true"){
+          employee.manager = true
+      } else if (manager === "false") {
+          employee.manager = false
+      }
+
+      if (fulltime === "true") {
+          employee.fulltime = true
+      } else if (fulltime === "false") {
+          employee.fulltime = false
+      }
 
       if (locationId === 0) {
         window.alert("Please select a location")
@@ -93,13 +107,19 @@ export const EmployeeForm = () => {
                   <label htmlFor="location">Full time: </label>
                   <select defaultValue="0" name="fulltime" id="fulltime" className="form-control" onChange={handleControlledInputChange}>
                       <option value="0">Select yes or no</option>
-                          <option key="1" value={false} >
+                          <option key="1" value={false}>
                               No
                           </option>
                           <option key="2" value={true}>
                               Yes
                           </option>
                   </select>
+              </div>
+          </fieldset>
+          <fieldset>
+              <div className="form-group">
+                  <label htmlFor="hourlyrate">Hourly Rate: </label>
+                  <input type="text" id="hourlyrate" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Hourly Rate" value={employee.hourlyrate}/>
               </div>
           </fieldset>
           <button className="btn btn-primary"
