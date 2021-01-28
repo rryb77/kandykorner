@@ -21,9 +21,9 @@ export const CustomerCandyList = () => {
 
 
   return (
-    <div className="customer-candies">
+    <div className="customers">
       {console.log("CustomerCandyList: Render", customerCandies)}
-
+      <h4>Your Order:</h4>
       {
         customerCandies.map(customer => {
           // const matchingCustomer = customers.find(c => c.id === customer.userId)
