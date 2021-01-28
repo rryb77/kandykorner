@@ -9,6 +9,9 @@ import { ProductTypeProvider } from "./components/product/ProductTypeProvider"
 import { EmployeeProvider } from "./components/employee/EmployeeProvider"
 import { EmployeeList} from "./components/employee/EmployeeList"
 import { EmployeeForm } from "./components/employee/EmployeeForm"
+import { CustomerCandyProvider } from "./components/customer/CustomerCandyProvider"
+import { CustomerCandyList } from "./components/customer/CustomerCandyList"
+import { CustomerProvider} from "./components/customer/CustomerProvider"
 
 export const ApplicationViews = () => {
     return (
@@ -25,12 +28,24 @@ export const ApplicationViews = () => {
                         <LocationList />
                         
                         <ProductTypeProvider>
-                            <ProductList />
+                            <CustomerCandyProvider>
+                                <ProductList />
+                            </CustomerCandyProvider>
                         </ProductTypeProvider>
 
                     </Route>
                 </ProductProvider>
             </LocationProvider>
+
+            <CustomerCandyProvider>
+                <CustomerProvider>
+                    <ProductProvider>
+                        <Route path="/orders">
+                            <CustomerCandyList />
+                        </Route>
+                    </ProductProvider>
+                </CustomerProvider>
+            </CustomerCandyProvider>
 
             <EmployeeProvider>
                 <LocationProvider>
