@@ -12,6 +12,7 @@ import { EmployeeForm } from "./components/employee/EmployeeForm"
 import { CustomerCandyProvider } from "./components/customer/CustomerCandyProvider"
 import { CustomerCandyList } from "./components/customer/CustomerCandyList"
 import { CustomerProvider} from "./components/customer/CustomerProvider"
+import { CustomerList } from "./components/customer/CustomerList"
 
 export const ApplicationViews = () => {
     return (
@@ -36,6 +37,12 @@ export const ApplicationViews = () => {
                     </Route>
                 </ProductProvider>
             </LocationProvider>
+
+            <CustomerProvider>
+                <Route path="/customers">
+                    <CustomerList />
+                </Route>
+            </CustomerProvider>
 
             <CustomerCandyProvider>
                 <CustomerProvider>
